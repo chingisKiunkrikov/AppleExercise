@@ -1,7 +1,11 @@
 plugins {
     id 'io.qameta.allure' version '2.5'
     id 'java'
+    id 'application'
 }
+apply plugin: "application"
+
+
 
 allure {
     autoconfigure = true
@@ -13,12 +17,22 @@ allure {
 
 }
 
+
+mainClassName = "MainClass"
+
+sourceCompatibility = 15
+targetCompatibility = 15
+
 group 'com.apple'
 version '1.0'
 
 repositories {
     jcenter()
     mavenCentral()
+}
+
+ext {
+    javaMainClass = mainClassName
 }
 
 dependencies {

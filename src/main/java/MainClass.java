@@ -16,46 +16,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-class TestClass1 implements Runnable {
-    public void run() {
-        Hashtable<String, String> capsHashtable = new Hashtable<String, String>();
-        capsHashtable.put("device", "iPhone 12 Pro");
-        capsHashtable.put("os_version", "14");
-        capsHashtable.put("browserName", "ios");
-        capsHashtable.put("realMobile", "true");
-        capsHashtable.put("build", "browserstack-build-1");
-        capsHashtable.put("name", "Thread 1");
-        MainTestClass r1 = new MainTestClass();
-        r1.executeTest(capsHashtable);
-    }
-}
-class TestClass2 implements Runnable {
-    public void run() {
-        Hashtable<String, String> capsHashtable = new Hashtable<String, String>();
-        capsHashtable.put("browser", "edge");
-        capsHashtable.put("browser_version", "93.0");
-        capsHashtable.put("os", "Windows");
-        capsHashtable.put("os_version", "10");
-        capsHashtable.put("build", "browserstack-build-1");
-        capsHashtable.put("name", "Thread 2");
-        MainTestClass r2 = new MainTestClass();
-        r2.executeTest(capsHashtable);
-    }
-}
-class TestClass3 implements Runnable {
-    public void run() {
-        Hashtable<String, String> capsHashtable = new Hashtable<String, String>();
-        capsHashtable.put("browser", "chrome");
-        capsHashtable.put("browser_version", "93.0");
-        capsHashtable.put("os", "OS X");
-        capsHashtable.put("os_version", "Big Sur");
-        capsHashtable.put("build", "browserstack-build-1");
-        capsHashtable.put("name", "Thread 3");
-        MainTestClass r3 = new MainTestClass();
-        r3.executeTest(capsHashtable);
-    }
-}
-public class MainTestClass {
+
+
+public class MainClass {
     public static final String USERNAME = "chingiskyunkriko_tWL9Ci";
     public static final String AUTOMATE_KEY = "Ktzk964FtanTxX4yCLtC";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";

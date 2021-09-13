@@ -1,0 +1,39 @@
+plugins {
+    id 'io.qameta.allure' version '2.5'
+    id 'java'
+}
+
+allure {
+    autoconfigure = true
+    version = '2.7.0'  // Latest Allure Version
+
+    useJUnit5 {
+        version = '2.7.0' // Latest Allure Version
+    }
+
+}
+
+group 'com.apple'
+version '1.0'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    // https://mvnrepository.com/artifact/com.codeborne/selenide
+    implementation group: 'com.codeborne', name: 'selenide', version: '5.24.2'
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.4.0'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-gradle
+    implementation group: 'io.qameta.allure', name: 'allure-gradle', version: '2.7.0'
+}
+
+test {
+    useJUnitPlatform()
+
+}
